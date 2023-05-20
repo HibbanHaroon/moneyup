@@ -68,6 +68,24 @@ flutter:
     - assets/moneyup-arrow.png
     - assets/app-icon.png
     - assets/search.svg
+    - assets/feed.svg
+    - assets/group.svg
+    - assets/map.svg
+    - assets/alert.svg
+    - assets/profile.svg
+    - assets/favorite.svg
+    - assets/three-dots-vertical.svg
+    - assets/upvote.svg
+    - assets/comment.svg
+    - assets/retweet.svg
+    - assets/views.svg
+    - assets/upload.svg
+    - assets/person1.jpg
+    - assets/person2.jpg
+    - assets/person3.jpg
+    - assets/post1.png
+    - assets/post2.jpg
+    - assets/post3.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
