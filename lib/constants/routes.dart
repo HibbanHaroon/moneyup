@@ -5,3 +5,4 @@ const newPasswordRoute = '/newPassword/';
 const registerRoute = '/register/';
 const homeRoute = '/home/';
 const splashRoute = '/splash/';
+const postRoute = '/post/';

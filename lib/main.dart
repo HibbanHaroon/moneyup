@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:moneyup/constants/routes.dart';
 import 'package:moneyup/views/new_password_view.dart';
+import 'package:moneyup/views/post_view.dart';
 import 'package:moneyup/views/verification_code_view.dart';
 import 'package:moneyup/views/forgot_password_view.dart';
 import 'package:moneyup/views/home_view.dart';
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       debugShowCheckedModeBanner: false,
-      home: const SplashView(),
+      home: SplashView(),
       routes: {
         loginRoute: (context) => const LoginView(),
         forgotPasswordRoute: (context) => const ForgotPasswordView(),
@@ -45,7 +46,8 @@ class MyApp extends StatelessWidget {
         newPasswordRoute: (context) => const NewPasswordView(),
         registerRoute: (context) => const RegisterView(),
         homeRoute: (context) => const HomeView(),
-        splashRoute: (context) => const SplashView(),
+        splashRoute: (context) => SplashView(),
+        postRoute: (context) => const PostView(),
       },
     );
   }
@@ -56,6 +58,6 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const HomeView();
+    return const LoginView();
   }
 }

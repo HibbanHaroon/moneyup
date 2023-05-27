@@ -96,6 +96,7 @@ class _HomeViewState extends State<HomeView> {
               ),
             ),
             PostWidget(
+              enableGestureDetector: true,
               personName: 'Noah Cent',
               personImage: 'assets/person1.jpg',
               time: '45 mins ago',
