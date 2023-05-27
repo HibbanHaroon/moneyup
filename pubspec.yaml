@@ -85,6 +85,8 @@ flutter:
     - assets/retweet.svg
     - assets/views.svg
     - assets/upload.svg
+    - assets/reup.svg
+    - assets/requote.svg
     - assets/person1.jpg
     - assets/person2.jpg
     - assets/person3.jpg

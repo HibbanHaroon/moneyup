@@ -47,6 +47,96 @@ class _PostWidgetState extends State<PostWidget> {
     isUpvote = widget.isUpvote;
   }
 
+  Widget _buildPanelRow(String svgPath, String title, String description) {
+    return InkWell(
+      onTap: () {
+        // Perform action based on the selected row
+        Navigator.pop(context);
+      },
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+        child: Row(
+          children: [
+            SvgPicture.asset(
+              svgPath,
+              width: 24,
+              height: 24,
+            ),
+            const SizedBox(width: 16),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: const TextStyle(
+                    fontFamily: 'SF Pro Display',
+                    fontWeight: FontWeight.w700,
+                    fontSize: 24,
+                    color: Color(0xFFFAFAFA),
+                  ),
+                ),
+                const SizedBox(height: 7),
+                Text(
+                  description,
+                  style: const TextStyle(
+                    fontFamily: 'SF Pro Display',
+                    fontWeight: FontWeight.normal,
+                    fontSize: 14,
+                    color: Color(0xFF71717A),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  void _onRetweetButtonPressed() {
+    // Perform action for the retweet button
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
+      builder: (BuildContext context) {
+        return Container(
+          decoration: const BoxDecoration(
+            color: Color(0xFF1E1E1E),
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(30),
+              topRight: Radius.circular(30),
+            ),
+          ),
+          height: 200,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Align(
+                alignment: Alignment.center,
+                child: Container(
+                  width: 100,
+                  height: 6,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(3),
+                  ),
+                ),
+              ),
+              _buildPanelRow('assets/reup.svg', 'ReUp', 'Retweet the post'),
+              const Divider(),
+              _buildPanelRow(
+                'assets/requote.svg',
+                'ReQuote',
+                'Add Quote to your retweet',
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
   void _onPostWidgetTapped() {
     if (widget.enableGestureDetector) {
       Navigator.of(context).pushNamed(
@@ -244,9 +334,7 @@ class _PostWidgetState extends State<PostWidget> {
                     Transform.scale(
                       scale: 0.8,
                       child: IconButton(
-                        onPressed: () {
-                          // Perform action for the retweet button
-                        },
+                        onPressed: _onRetweetButtonPressed,
                         icon: SvgPicture.asset(
                           'assets/retweet.svg',
                         ),
