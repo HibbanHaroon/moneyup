@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:moneyup/constants/routes.dart';
+import 'package:moneyup/views/components/bottom_navigation_bar.dart';
 import 'package:moneyup/views/components/post.dart';
 
 class HomeView extends StatefulWidget {
@@ -11,9 +11,8 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-  int _currentIndex = 0;
-  bool _isFavorite = false;
-  bool _isUpvote = false;
+  final bool _isFavorite = false;
+  final bool _isUpvote = false;
 
   @override
   Widget build(BuildContext context) {
@@ -139,79 +138,7 @@ class _HomeViewState extends State<HomeView> {
           ],
         ),
       ),
-      bottomNavigationBar: SizedBox(
-        height: 70,
-        child: BottomNavigationBar(
-          currentIndex: _currentIndex,
-          type: BottomNavigationBarType.fixed,
-          backgroundColor: const Color(0xFF1E1E1E),
-          unselectedItemColor: const Color(0xFF5A5A5A),
-          selectedItemColor: Colors.white,
-          selectedLabelStyle: const TextStyle(
-            fontWeight: FontWeight.bold,
-          ),
-          items: [
-            BottomNavigationBarItem(
-              icon: SvgPicture.asset(
-                'assets/feed.svg',
-                height: 24,
-                color: _currentIndex == 0 ? Colors.white : Colors.grey,
-              ),
-              label: 'Feeds',
-            ),
-            BottomNavigationBarItem(
-              icon: SvgPicture.asset(
-                'assets/group.svg',
-                height: 24,
-                color: _currentIndex == 1 ? Colors.white : Colors.grey,
-              ),
-              label: 'Groups',
-            ),
-            BottomNavigationBarItem(
-              icon: SvgPicture.asset(
-                'assets/map.svg',
-                height: 24,
-                color: _currentIndex == 2 ? Colors.white : Colors.grey,
-              ),
-              label: 'Map',
-            ),
-            BottomNavigationBarItem(
-              icon: SvgPicture.asset(
-                'assets/alert.svg',
-                height: 24,
-                color: _currentIndex == 3 ? Colors.white : Colors.grey,
-              ),
-              label: 'Alerts',
-            ),
-            BottomNavigationBarItem(
-              icon: SvgPicture.asset(
-                'assets/profile.svg',
-                height: 24,
-                color: _currentIndex == 4 ? Colors.white : Colors.grey,
-              ),
-              label: 'Profile',
-            ),
-          ],
-          onTap: (index) {
-            setState(() {
-              _currentIndex = index;
-              switch (index) {
-                case 0:
-                  Navigator.of(context).pushReplacementNamed(homeRoute);
-                  break;
-                case 1:
-                  break;
-                case 2:
-                  break;
-                case 3:
-                  break;
-                case 4:
-                  break;
-              }
-            });
-          },
-        ),
-      ),
+      bottomNavigationBar: const CustomBottomNavigationBar(),
     );
   }
 }

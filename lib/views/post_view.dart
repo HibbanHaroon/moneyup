@@ -124,7 +124,7 @@ class _PostViewState extends State<PostView> {
                   ),
                   onPressed: () {
                     // Add your onPressed logic here
-                    final comment = _commentController.text;
+                    // final comment = _commentController.text;
                     _commentController.clear();
                     // Process the comment as desired
                   },

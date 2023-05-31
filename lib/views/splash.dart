@@ -19,17 +19,18 @@ class _SplashViewState extends State<SplashView> with TickerProviderStateMixin {
   void initState() {
     super.initState();
     _controller = AnimationController(
-      duration: const Duration(seconds: 1),
+      duration: const Duration(milliseconds: 500),
       vsync: this,
     );
 
     _mController = AnimationController(
-      duration: const Duration(seconds: 1),
+      duration:
+          const Duration(milliseconds: 500), // Reduced duration to 0.5 seconds
       vsync: this,
     );
 
     _slideAnimation = Tween<Offset>(
-      begin: const Offset(0.0, 0.2),
+      begin: const Offset(0.0, 0.4),
       end: const Offset(0.0, 0.0),
     ).animate(CurvedAnimation(
       parent: _controller,
@@ -37,11 +38,13 @@ class _SplashViewState extends State<SplashView> with TickerProviderStateMixin {
     ));
 
     _mSlideAnimation = Tween<Offset>(
-      begin: const Offset(0.0, 1.0),
+      begin: const Offset(0.0, 1.5),
       end: const Offset(0.0, 0.0),
     ).animate(CurvedAnimation(
       parent: _mController,
-      curve: Curves.easeIn,
+      curve: Curves.easeIn, // Adjust the curve for motion coming in
+      reverseCurve:
+          Curves.fastOutSlowIn, // Adjust the reverse curve for motion going out
     ));
 
     _fadeAnimation = Tween<double>(

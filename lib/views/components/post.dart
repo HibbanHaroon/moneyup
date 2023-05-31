@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:moneyup/constants/colors.dart';
 import 'package:moneyup/constants/routes.dart';
 
 class PostWidget extends StatefulWidget {
@@ -72,7 +73,7 @@ class _PostWidgetState extends State<PostWidget> {
                     fontFamily: 'SF Pro Display',
                     fontWeight: FontWeight.w700,
                     fontSize: 24,
-                    color: Color(0xFFFAFAFA),
+                    color: AppColors.lightTextColor,
                   ),
                 ),
                 const SizedBox(height: 7),
@@ -102,7 +103,7 @@ class _PostWidgetState extends State<PostWidget> {
       builder: (BuildContext context) {
         return Container(
           decoration: const BoxDecoration(
-            color: Color(0xFF1E1E1E),
+            color: AppColors.backgroundColor,
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(30),
               topRight: Radius.circular(30),

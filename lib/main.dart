@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:moneyup/constants/routes.dart';
 import 'package:moneyup/views/new_password_view.dart';
 import 'package:moneyup/views/post_view.dart';
+import 'package:moneyup/views/profile_view.dart';
 import 'package:moneyup/views/verification_code_view.dart';
 import 'package:moneyup/views/forgot_password_view.dart';
 import 'package:moneyup/views/home_view.dart';
@@ -40,13 +41,14 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: SplashView(),
       routes: {
+        splashRoute: (context) => SplashView(),
         loginRoute: (context) => const LoginView(),
         forgotPasswordRoute: (context) => const ForgotPasswordView(),
         verificationCodeRoute: (context) => const VerificationCodeView(),
         newPasswordRoute: (context) => const NewPasswordView(),
         registerRoute: (context) => const RegisterView(),
         homeRoute: (context) => const HomeView(),
-        splashRoute: (context) => SplashView(),
+        profileRoute: (context) => const ProfileView(),
         postRoute: (context) => const PostView(),
       },
     );

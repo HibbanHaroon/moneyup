@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:moneyup/constants/colors.dart';
 import 'package:moneyup/constants/routes.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -34,13 +35,13 @@ class _LoginViewState extends State<LoginView> {
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: const Color(0xFF1E1E1E),
+      backgroundColor: AppColors.backgroundColor,
       body: SingleChildScrollView(
         child: Column(
           children: [
             Container(
               width: screenWidth,
-              color: const Color(0xFF1E1E1E),
+              color: AppColors.backgroundColor,
               child: const Padding(
                 padding: EdgeInsets.only(top: 80.0, bottom: 30),
                 child: Column(
@@ -68,16 +69,14 @@ class _LoginViewState extends State<LoginView> {
             ),
             Container(
               decoration: BoxDecoration(
-                color: const Color(0xFFFFFFFF), // Set the background color
+                color: const Color(0xFFFFFFFF),
                 border: Border.all(
-                  color: const Color(0xFFE1EFFE), // Set the border color
-                  width: 1, // Set the border width
+                  color: const Color(0xFFE1EFFE),
+                  width: 1,
                 ),
                 borderRadius: const BorderRadius.only(
-                  topLeft:
-                      Radius.circular(35.0), // Set border radius on top left
-                  topRight:
-                      Radius.circular(35.0), // Set border radius on top right
+                  topLeft: Radius.circular(35.0),
+                  topRight: Radius.circular(35.0),
                 ),
               ),
               child: Padding(
@@ -94,16 +93,14 @@ class _LoginViewState extends State<LoginView> {
                         decoration: InputDecoration(
                           hintText: 'Email',
                           hintStyle: const TextStyle(
-                            color: Color(0xFFA1A1AA),
+                            color: AppColors.placeholderColor,
                           ),
-                          contentPadding: const EdgeInsets.fromLTRB(20.0, 20.0,
-                              20.0, 20.0), // Set the content padding
+                          contentPadding:
+                              const EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 20.0),
                           border: OutlineInputBorder(
                             borderSide: const BorderSide(
-                                color: Color(0xFFD4D4D8),
-                                width: 1.0), // Set the border color and width
-                            borderRadius: BorderRadius.circular(
-                                12.0), // Set the border radius
+                                color: Color(0xFFD4D4D8), width: 1.0),
+                            borderRadius: BorderRadius.circular(12.0),
                           ),
                         ),
                         style: const TextStyle(
@@ -112,7 +109,7 @@ class _LoginViewState extends State<LoginView> {
                           fontWeight: FontWeight.w400,
                           fontSize: 18.0,
                           height: 1.0,
-                          color: Color(0xFF18181B), // Set the hint text color
+                          color: AppColors.darkTextColor,
                         ),
                       ),
                     ),
@@ -127,16 +124,14 @@ class _LoginViewState extends State<LoginView> {
                         decoration: InputDecoration(
                           hintText: 'Password',
                           hintStyle: const TextStyle(
-                            color: Color(0xFFA1A1AA),
+                            color: AppColors.placeholderColor,
                           ),
-                          contentPadding: const EdgeInsets.fromLTRB(20.0, 20.0,
-                              20.0, 20.0), // Set the content padding
+                          contentPadding:
+                              const EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 20.0),
                           border: OutlineInputBorder(
                             borderSide: const BorderSide(
-                                color: Color(0xFFD4D4D8),
-                                width: 1.0), // Set the border color and width
-                            borderRadius: BorderRadius.circular(
-                                12.0), // Set the border radius
+                                color: Color(0xFFD4D4D8), width: 1.0),
+                            borderRadius: BorderRadius.circular(12.0),
                           ),
                         ),
                         style: const TextStyle(
@@ -145,7 +140,7 @@ class _LoginViewState extends State<LoginView> {
                           fontWeight: FontWeight.w400,
                           fontSize: 18.0,
                           height: 1.0,
-                          color: Color(0xFF18181B), // Set the hint text color
+                          color: AppColors.darkTextColor,
                         ),
                       ),
                     ),
@@ -194,7 +189,7 @@ class _LoginViewState extends State<LoginView> {
                         },
                         style: TextButton.styleFrom(
                           fixedSize: const Size(398.0, 60.0),
-                          backgroundColor: const Color(0xFF79F959),
+                          backgroundColor: AppColors.primaryColor,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12.0),
                           ),
@@ -206,7 +201,7 @@ class _LoginViewState extends State<LoginView> {
                             fontStyle: FontStyle.normal,
                             fontWeight: FontWeight.w700,
                             fontSize: 18.0,
-                            color: Color(0xFF18181B),
+                            color: AppColors.darkTextColor,
                           ),
                         ),
                       ),
@@ -221,10 +216,9 @@ class _LoginViewState extends State<LoginView> {
                             bottom: 5.0,
                           ),
                           child: Container(
-                            width: 147, // Set the desired width
-                            height: 1, // Set the desired height
-                            color: const Color(
-                                0xFFD4D4D8), // Set the desired color
+                            width: 147,
+                            height: 1,
+                            color: const Color(0xFFD4D4D8),
                           ),
                         ),
                         const Text(
@@ -241,10 +235,9 @@ class _LoginViewState extends State<LoginView> {
                             bottom: 5.0,
                           ),
                           child: Container(
-                            width: 147, // Set the desired width
-                            height: 1, // Set the desired height
-                            color: const Color(
-                                0xFFD4D4D8), // Set the desired color
+                            width: 147,
+                            height: 1,
+                            color: const Color(0xFFD4D4D8),
                           ),
                         ),
                       ],
@@ -257,11 +250,9 @@ class _LoginViewState extends State<LoginView> {
                         },
                         style: ElevatedButton.styleFrom(
                           fixedSize: const Size(340.0, 60.0),
-                          backgroundColor:
-                              const Color(0xFF1877F2), // Set background color
+                          backgroundColor: const Color(0xFF1877F2),
                           shape: RoundedRectangleBorder(
-                            borderRadius:
-                                BorderRadius.circular(12), // Set border radius
+                            borderRadius: BorderRadius.circular(12),
                           ),
                           padding: const EdgeInsets.symmetric(
                               vertical: 10), // Set horizontal padding
@@ -271,8 +262,7 @@ class _LoginViewState extends State<LoginView> {
                           child: Align(
                             alignment: Alignment.centerLeft,
                             child: FaIcon(
-                              FontAwesomeIcons
-                                  .facebookF, // Set the desired Font Awesome icon
+                              FontAwesomeIcons.facebookF,
                               size: 20,
                               color: Colors.white,
                             ),
@@ -287,7 +277,7 @@ class _LoginViewState extends State<LoginView> {
                               fontStyle: FontStyle.normal,
                               fontWeight: FontWeight.w500,
                               fontSize: 15,
-                              color: Colors.white, // Set text color
+                              color: Colors.white,
                             ),
                           ),
                         ),
@@ -301,22 +291,18 @@ class _LoginViewState extends State<LoginView> {
                         },
                         style: ElevatedButton.styleFrom(
                           fixedSize: const Size(340.0, 60.0),
-                          backgroundColor:
-                              const Color(0xFF18181B), // Set background color
+                          backgroundColor: AppColors.darkTextColor,
                           shape: RoundedRectangleBorder(
-                            borderRadius:
-                                BorderRadius.circular(12), // Set border radius
+                            borderRadius: BorderRadius.circular(12),
                           ),
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 10), // Set horizontal padding
+                          padding: const EdgeInsets.symmetric(vertical: 10),
                         ),
                         icon: const Padding(
                           padding: EdgeInsets.only(),
                           child: Align(
                             alignment: Alignment.centerLeft,
                             child: FaIcon(
-                              FontAwesomeIcons
-                                  .apple, // Set the desired Font Awesome icon
+                              FontAwesomeIcons.apple,
                               size: 20,
                               color: Colors.white,
                             ),
@@ -331,7 +317,7 @@ class _LoginViewState extends State<LoginView> {
                               fontStyle: FontStyle.normal,
                               fontWeight: FontWeight.w500,
                               fontSize: 15,
-                              color: Colors.white, // Set text color
+                              color: Colors.white,
                             ),
                           ),
                         ),
@@ -345,22 +331,18 @@ class _LoginViewState extends State<LoginView> {
                         },
                         style: ElevatedButton.styleFrom(
                           fixedSize: const Size(340.0, 60.0),
-                          backgroundColor:
-                              const Color(0xFFD4D4D8), // Set background color
+                          backgroundColor: const Color(0xFFD4D4D8),
                           shape: RoundedRectangleBorder(
-                            borderRadius:
-                                BorderRadius.circular(12), // Set border radius
+                            borderRadius: BorderRadius.circular(12),
                           ),
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 10), // Set horizontal padding
+                          padding: const EdgeInsets.symmetric(vertical: 10),
                         ),
                         icon: const Padding(
                           padding: EdgeInsets.only(),
                           child: Align(
                             alignment: Alignment.centerLeft,
                             child: FaIcon(
-                              FontAwesomeIcons
-                                  .google, // Set the desired Font Awesome icon
+                              FontAwesomeIcons.google,
                               size: 20,
                             ),
                           ),
@@ -374,7 +356,7 @@ class _LoginViewState extends State<LoginView> {
                               fontStyle: FontStyle.normal,
                               fontWeight: FontWeight.w500,
                               fontSize: 15,
-                              color: Color(0xFF18181B), // Set text color
+                              color: AppColors.darkTextColor,
                             ),
                           ),
                         ),
@@ -397,7 +379,7 @@ class _LoginViewState extends State<LoginView> {
                           TextSpan(
                             text: "Don't have an account? ",
                             style: TextStyle(
-                                color: Color(0xFF18181B),
+                                color: AppColors.darkTextColor,
                                 fontWeight: FontWeight.w400),
                             children: [
                               TextSpan(
