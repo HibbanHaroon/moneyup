@@ -1,5 +1,6 @@
-# Money Up Mobile App
-Money Up is a mobile app that serves as a community platform for
+# Money Up Mobile App 
+Money Up is a mobile app that is being developed for a client 
+which serves as a community platform for
 entrepreneurs and small business owners to connect, share their
 experiences, create content, and network with like-minded individuals.
 The app offers a range of features that allow users to showcase their
@@ -33,3 +34,4 @@ supportive community and achieve success.
 # Developers
 * Ahmar Hafeez
 * Hibban Haroon
+* Hammad Rao
